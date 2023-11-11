@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prism.css">
+    <!-- <link rel="stylesheet" href="super1.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <title>Header</title>
+    <style>
+        .header{
+            width:100%;
+            overflow-wrap: break-word;
+            border:0.0rem solid black;
+            background-color: rgb(160, 238, 245);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            opacity:0.98;
+            position: fixed;
+            z-index: 999;
+            box-shadow: 0rem 0rem 0.3rem;
+
+        }
+        .header #up-2 ul li a{
+            text-decoration: none;
+            padding: 0rem 1rem;
+            font-size: 1.2rem;
+        }
+
+        .header #up-2 ul li a:hover{
+            color:rgb(247, 118, 118);
+            text-decoration: underline;
+            transition-duration:200ms;
+        }
+
+        .header #up-2 ul li{
+            list-style: none;
+            display: inline;
+            justify-content: center;
+        }
+        .header #up-2 ul{
+            margin-top:1vw;
+            margin-bottom:1vw;
+        }
+        
+        body{
+            margin: 0rem;
+            opacity:0.99;
+        }
+        button{
+            background-color:rgb(255, 255, 255);
+            border:none;
+            color:rgb(0, 0, 0);
+            padding: 0.4rem;
+            border-radius: 0.4rem;
+            font-size: 1.2rem;
+            font-family:calibri;
+            font-weight: bold;
+            margin: 0.3rem;
+            box-shadow: 0rem 0rem 0.15rem;
+        }
+
+        #up-1{
+            text-align: center;
+            flex-grow: 1.8;
+            flex-shrink: 10;
+            font-family:candara;
+            font-weight: bolder;
+            color:rgb(136, 15, 15);
+        }
+        
+        #up-1 p{
+            font-size: 1.5rem;
+            padding-left:2rem;
+            padding-right:2rem;
+            margin-top:1vw;
+            margin-bottom: 1vw;
+        }
+     
+        #up-2{
+            flex-grow: 6;
+            text-align:center;
+            font-family: candara;
+            font-weight: bold;
+        }
+
+        #up-3{
+            flex-grow: 1;
+            text-align: center;
+        }
+        
+        .content_area{
+            width:100%;
+            display: flex;
+            justify-content:center;
+            flex-direction: row;
+        }
+
+        @media (max-width: 650px){
+            .content_area{
+                flex-direction: column;
+            }
+        
+        }
+            
+        #left_section{
+            width: 18vw;
+        }
+        #main_section{
+            border-left:1px solid;
+            width:97vw;
+            padding-left: 3vw;      
+            padding-right: 1vw;  
+        }
+
+        #main_section p{
+            font-size:15px;
+            font-family:Lato,sans-serif;
+        }
+
+        .MathJax_Display{ 
+            width: 100%;
+            height:70px;
+            overflow-x:auto;
+            overflow-y: auto;
+
+        }
+
+
+        /* copied from begore */
+
+
+        h1{
+            font-family: segoe UI black;
+            padding:2px;
+        }
+        h2{
+            font-family:'Lato',sans-serif;
+            padding:1px;
+        }
+
+        pre{
+            height:40rem;
+            box-shadow: 0px 0px 1px;
+            border-bottom-right-radius: 3px;
+        }
+
+        #main_section p,#main_section ol li{
+            font-family:'Lato',sans-serif;
+        }
+ 
+        #main_section .code_top{
+            font-family: segoe UI black;
+            font-weight: bold;
+            background-color:rgb(157, 227, 249);
+            font-family:dubai;
+            padding: 3px;
+            padding-left: 20px;
+            margin:0px;
+            border-top-left-radius:3px;
+            border-top-right-radius:3px;
+            box-shadow: 0px 0px 1px;
+        }
+        pre.language-fortran{
+            margin:0px;
+            overflow-y: scroll;
+        }
+
+    </style>
+</head>
+
+<body>
+    <script src="prism.js"></script>
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    <!-- Header starts -->
+    <header class="header">
+        <div id="up-1">
+            <p>JUPHY</p>
+        </div>
+        <div id="up-2">
+            <ul style="padding: 0rem;">
+                <li><a href="">Home</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Join</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div id="up-3">
+            <button>Sign Up</button>
+        </div>
+    </header>
+    <!-- header ends -->
+    
+
+    <div style="padding-top:100px;"></div>
+
+    <div class="content_area">
+
+        <div id="left_section">
+                this is left section
+        </div>
+
+
+
+        <!-- main work area -->
+        <div id="main_section">  
+            <h1>Fourier Series</h1>
+            <p>In this section we shall go through Fourier Series.</p>
+            <h2>What is Fourier Series</h2>
+            <p>A fourier series is an expansion of a periodic function f(x) in terms of an
+                infinite sum of sines and cosines of a fundamental angle and its harmonics.
+                <br>
+                The <em>Fourier Series</em> of a harmonic function <em>f(x)</em> with a period 2c defined in the interval [-c:c] is usually expressed as: <br>
+                $$f(x) = \frac{a_0}{2}+ \sum_{n=1}^{\infty} a_n cos(\frac{n \pi x}{c})+ \sum_{n=1}^{\infty} b_n sin(\frac{n \pi x}{c})$$
+                where \(a_n\) and \(b_n \) are constants for all positive integer values of n. And these constants are:
+                $$a_0 = \frac{1}{c}\int_{-c}^{c} f(x) dx$$
+                $$a_n = \frac{1}{c} \int_{-c}^{c} f(x) cos(\frac{n \pi x}{c}) dx$$
+                $$b_n = \frac{1}{c} \int_{-c}^{c} f(x) sin(\frac{n \pi x}{c}) dx$$
+                
+        Thus the coefficients can be determined by evaluating the above mentioned 
+        integeral. <br>
+        A function can be expressed in Fourier series if it satisfies the <b>Dirichlet 
+            conditions</b>. Which are,<ol>
+                <li>The function is single valued and bounded</li>
+                <li>The function has finite number of discontinuities and maxima and minima.</li>
+                <li>f(x+2c) = f(c) for all values of x outside [-c:c]</li>
+            </ol>
+        
+            </p>
+        
+        
+            <hr>
+                <p class="code_top">Boson.f90</p>
+            <pre>
+                <code class="language-fortran">
+program boson
+integer::ne,np,i,j,s,k
+real,allocatable::energy(:),e_config(:)
+real::part_func,tem
+open(20,file = 'part_boson.dat',status='unknown')
+ne = 3
+np = 3
+allocate(energy(ne),e_config((np+1)**ne-1))
+energy = (/2.,3.,4./)
+call energy_config(ne,np,energy,e_config,s)
+tem = 0.1
+do while(tem<100.0)
+call Partition(e_config,s,tem,part_func)
+write(20,*)tem,part_func
+tem = tem + 0.05
+enddo
+end program boson
+
+subroutine Partition(e_config,s,tem,part_func)
+integer::s,k
+real::part_func,e_config(s)
+part_func = 0.0
+do k = 1,s
+part_func = part_func + exp(-1.0*e_config(k)/tem)
+enddo
+end subroutine Partition
+
+subroutine energy_config(ne,np,energy,e_config,s)
+integer::ne,np,j,s,i
+integer::binary(ne)
+real::energy(ne),e_config((np+1)**ne-1)
+s = 0
+do j = 1,(np+1)**ne-1
+call dec2nin(j,ne,np+1,binary)
+if (sum(binary) == np) then
+s = s+1
+e_config(s) = dot_product(binary,energy)
+print*,(binary(i),i=1,ne),e_config(s)
+endif
+enddo
+return
+end subroutine energy_config
+
+subroutine dec2nin(decgg,bit,x,bin)
+integer::bit,x     ! generate x nary number(x=2 for binary)
+integer::bin(bit),dec,decgg
+dec = decgg
+do i = bit,1,-1
+bin(i) = mod(dec,x)
+dec = dec/x
+enddo
+dec = decgg
+end subroutine dec2nin
+                </code>
+            </pre>
+            <h2>Discussion</h2>
+            <p>This is discussion written</p>
+        
+        
+        </div>
+        </div>
+<footer style="height: 10rem;background-color: blueviolet;">This is footer</footer>
+
+
+</body>
+</html>
