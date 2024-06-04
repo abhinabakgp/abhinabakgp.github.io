@@ -10,12 +10,12 @@ body{
     width:100%;
     overflow-wrap: break-word;
     border:0.0rem solid black;
-    background-color: rgb(215, 223, 214);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    opacity:0.98;
+    opacity:1.999;
     position: fixed;
     z-index: 999;
     box-shadow: 0rem 0rem 0.1rem;
@@ -25,12 +25,31 @@ body{
     text-decoration: none;
     padding: 0rem 1rem;
     font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+}
+
+.header #up-1 a{
+    text-decoration: none;
+    color:rgb(136, 15, 15);
 }
 
 .header #up-2 ul li a:hover{
-    color:rgb(251, 155, 2);
+    color:rgb(17, 244, 244);
     text-decoration:none;
     transition-duration:200ms;
+}
+
+.form_entry{
+    height: 30px;
+    width: 260px;
+    font-size: 15px;
+    margin-bottom: 1.5rem;
+    border:1px;
+    box-shadow:0.1px 0.1px 1px;
+    
+}
+.form_entry:focus{
+    outline: none;
 }
 
 .header #up-2 ul li{
@@ -48,20 +67,19 @@ body{
     opacity:0.99;
 }
 button{
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(13, 2, 166);
     border:none;
-    color:rgb(0, 0, 0);
-    padding: 0.3rem;
-    border-radius: 0.1rem;
+    color:rgb(255, 255, 255);
+    padding: 0.4rem;
+    border-radius: 0.3rem;
     font-size: 1.2rem;
-    font-family:Times;
-    font-weight:normal;
+    font-family:corbel;
     margin: 0.3rem;
     box-shadow: 0rem 0rem 0.05rem;
     cursor:pointer;
 }
 button:hover{
-    background-color: rgb(238, 237, 240);
+    background-color: rgb(171, 151, 210);
 }
 
 #up-1{
@@ -111,10 +129,8 @@ button:hover{
     width: 18vw;
 }
 #main_section{
-    border-left:1px solid;
-    width:97vw;
-    padding-left: 3vw;      
-    padding-right: 1vw;  
+    width:100%;
+
 }
 
 #main_section p{
