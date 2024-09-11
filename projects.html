@@ -1,172 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prism.css">
-    <link rel="stylesheet" href="super1.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    <title>Abhinaba's Personal Site</title>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinaba's Personal Site</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
+
+
 <body>
-    <script src="prism.js"></script>
-    <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  <nav id="navbar_top"  class="navbar navbar-expand-md bg-dark navbar-dark shadow">
+    <div class="container">
+      <a href="index.html" class="navbar-brand align-self-center">
+        
+        Abhinaba Pahari
+      </a>
 
-    <!-- Header starts -->
-    <header class="header">
-        <div id="up-1">
-            <a href="index.html"><p>Abhinaba Pahari</p></a>
-        </div>
-        <div id="up-2">
-            <ul style="padding: 0rem;">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="joinpage.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div id="up-3">
-            <a  href="joinpage.html"><button>Sign Up</button></a>
-        </div>
-    </header>
-    <!-- header ends -->
-    
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div style="padding-top:80px;"></div>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto" style="color: brown;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" >
+              Home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropbtn" href="projects.html">Projects</a>
 
-    <div class="content_area">
+            <div class="dropdown-content">
+              <a href="#">Python Projects</a>
+              <a href="#">FORTRAN Codes</a>
+              <a href="#">Qiskit Codes</a>
+            </div>
 
-   
-        <div>
-            <h1>Current Projects</h1> 
-
-            <div style="display: flex;justify-content: center;">
-
-                <div style="width:500px;background-color: rgb(238, 237, 237);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 13px rgb(148, 169, 174);">
-                   <h1 style="font-size:x-large;color:rgb(14, 49, 154);">Boson Simulation using Contracted Schrodinger's Equation</h1>
-                   <p style="font-family: Lato,sans-serif;"> 
-                    Quantum computers are promising tools for simulating many-body quantum systems due to their
-potential scaling advantage over classical computers. While significant effort has been expended on
-many-fermion systems, here we simulate a model entangled many-boson system with the
-contracted quantum eigensolver (CQE). We generalize the CQE to many-boson systems by
-encoding the bosonic wavefunction on qubits. The CQE provides a compact ansatz for the bosonic
-wave function whose gradient is proportional to the residual of a contracted Schrödinger equation.
-We apply the CQE to a bosonic system, where N quantum harmonic oscillators are coupled
-through a pairwise quadratic repulsion.
-                   </p> <br>
-           <img style="width:480px;margin-bottom:20px;" src="https://content.cld.iop.org/journals/1367-2630/25/10/103005/revision1/njpacf9c3f1_hr.jpg" alt="">
-           <center>
-            <button class="button-42" style="background-image: linear-gradient(-180deg, #05b8f9, #001660);">
-                SEE MORE</button>
-           </center>
-        </div>
+          </li>
+          <li class="nav-item">
+            <a href="programs.html" class="nav-link">Progrmas</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="join.html" class="nav-link">Join</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
 
-
-
-        <div style="width:500px;background-color: rgb(237, 249, 192);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 13px rgb(148, 169, 174);">
-            <h1 style="font-size:x-large;color:rgb(4, 152, 43);">Entanglement in continuous variable systems</h1>
-            <p style="font-family: Lato,sans-serif;"> 
-                We review the theory of continuous-variable entanglement with special emphasis 
-                on foundational aspects, conceptual structures, and mathematical methods. Much attention 
-                is devoted to the discussion of separability criteria and entanglement properties of 
-                Gaussian states, for their great practical relevance in applications to quantum optics 
-                and quantum information, as well as for the very clean framework that they allow for the 
-                study of the structure of nonlocal correlations. We give a self-contained introduction to 
-                phase-space and 
-                symplectic methods in the study of Gaussian states of infinite-dimensional bosonic systems.
-            </p> <br>
-    <img style="width:460px;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
-    <center>
-     <button class="button-42" style="background-image: linear-gradient(-180deg, #53f85e, #024602);">
+  <section class="container-fluid bg-present">
+    <div class="container pt-3">
+      <div class="h1 text-center text-dark p-3">Recent Projects</div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(249, 192, 240);">
+            <h1 style="font-size:x-large;color:rgb(95, 1, 100);">Analysis of Entanglement of two-mode squeezed vaccum using Wigner quasiprobability distribution</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="assets/Figure_2.png" alt="">
+        
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #f553f8, #581052);">
          SEE MORE</button>
-    </center>
- </div>
+                    </div></div>
 
-
-
-
-
-        
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(237, 249, 192);">
+            <h1 style="font-size:x-large;color:rgb(4, 152, 43);">Entanglement in continuous variable systems: Recent advances and current perspectives</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #53f85e, #024602);">
+         SEE MORE</button>
             </div>
-            
-            <br><br>
-            
-            <h1>Previous Projects</h1>
+        </div>
 
-            <div style="display:flex;flex-direction: row;">
-
-            <div style="width:450px;background-color: rgb(252, 253, 238);padding: 2rem;margin: 3rem;box-shadow: 6.0px 6.0px 13px rgb(148, 169, 174);">
-                <h1 style="font-size:x-large;color:rgb(172, 142, 8);">Efficient Variational Quantum Simulator
-                    Using Active Error Minimization
-                    </h1>
-                <p style="font-family: Lato,sans-serif;"> 
-                    One of the key applications for quantum computers will be the simulation 
-                    of other quantum systems that arise in chemistry, materials science, etc, 
-                    in order to accelerate the process of discovery. It is important to ask: 
-                    Can this be achieved using near future quantum processors, of modest size 
-                    and under imperfect control, or must it await the more distant era of 
-                    large-scale fault-tolerant quantum computing? Here we propose a variational 
-                    method involving closely integrated classical and quantum coprocessors.
-                    minimised by boosting them artificially and then extrapolating to the zero-error case.
-                </p> <br>
-        <img style="width:420px;margin-bottom:20px;" src="https://d3i71xaburhd42.cloudfront.net/df6bdf26b2ad1a609f6a23e76aa7a4c3d6d82fe5/11-Figure5-1.png" alt="">
-        <center>
-         <button class="button-42" style="background-image: linear-gradient(-180deg, #e5fb6d, #566103);">
-             SEE MORE</button>
-        </center>
-     </div>
-
-     <div style="width:450px;background-color: rgb(253, 245, 242);padding: 2rem;margin: 3rem;box-shadow: 6.0px 6.0px 13px rgb(148, 169, 174);margin-left:5rem;">
-        <h1 style="font-size:x-large;color:rgb(233, 102, 1);">Analysis of diffraction of electrons through single slit as Boundary Value Problem</h1>
-        <p style="font-family: Lato,sans-serif;"> 
-            We solved the Time Independent Schrodinger's equation for different
-            regions of diffraction i.e. inside the slit and back of the slit by considering a plane wave
-            falling on the slit from front. Firstly we solved the TISE using separation of variables
-            and matching the wavefunction at the boundaries. Then we showed numerical results
-            and plots of intensity distribution according to our theory of diffraction. The paper
-            concludes with brief overview of signiffcance of our work and comparison of our results
-            with contemporary theoretical results.
-        </p> <br>
-<img style="width:420px;margin-bottom:20px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1A7LhXny8mDC06Iyyz67soMFGT-jILKFDYRh-bKYuRSO0YD0rZdKs5v9VCZQjJ4o-jg&usqp=CAU" alt="">
-<center>
- <button class="button-42" style="background-image: linear-gradient(-180deg, #f94e05, #fcc997);">
-     SEE MORE</button>
-</center>
-</div>
-</div>
-
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(238, 237, 237);">
+            <h1 style="font-size:x-large;color:rgb(14, 49, 154);">Boson Simulation using Contracted Schrodinger's Equation and Boson to Qubit mapping <br><br></h1>
+           <br>
+    <img style="width:100%;margin-bottom:20px;" src="https://content.cld.iop.org/journals/1367-2630/25/10/103005/revision1/njpacf9c3f1_hr.jpg" alt="">
+     <button class="button-42" style="background-image: linear-gradient(-180deg, #05b8f9, #001660);">
+         SEE MORE</button>
+     </div></div>
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(243, 251, 137);">
+            <h1 style="font-size:x-large;color:rgb(54, 46, 4);">Efficient Variational Quantum Simulator
+                Using Active Error Minimization Techniques : Review <br><br>
+                </h1>
+    <img style="width:100%;margin-bottom:20px;" src="https://d3i71xaburhd42.cloudfront.net/df6bdf26b2ad1a609f6a23e76aa7a4c3d6d82fe5/11-Figure5-1.png" alt="">
+     <button class="button-42" style="background-image: linear-gradient(-180deg, #f8c302, #ff9d00);">
+         SEE MORE</button>
 
         </div>
         </div>
-            </div>
-           
-        
-        
-        <footer style="height: 14rem;background-color: rgb(106, 50, 30);">
-            <div style="display: flex;justify-content: center;">
-            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 30px;height: 26px;margin-top:30px;padding: 7px;"></a>
-            </div>
-        <div style="text-align: center;">
-            <p style="font-size: larger; color: rgb(255, 255, 255);">© 2024 Abhinaba Pahari  |  All Rights Reserved</p>
-            <p style="font-size: large; color: rgb(230, 230, 172);">abhinaba2002.github.io<br><br> abhinabapahari@gmail.com <br><br></p>
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(253, 245, 242);">
+            <h1 style="font-size:x-large;color:rgb(233, 102, 1);">Analysis of diffraction of electrons through single slit as Boundary Value Problem</h1>
+             <br>
+            <img style="width:100%;margin-bottom:20px;" src="assets/valo.png" alt="">
+            <button class="button-42" style="background-image: linear-gradient(-180deg, #fe804a, #fd0c0c);">
+            SEE MORE</button>
+                </div>
         </div>
-        
-        </footer>
-        
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(250, 250, 250);">
+            <h1 style="font-size:x-large;color:rgb(5, 10, 6);">Study of nuclear reactions using Nuclear emulsion and Data Analysis using FORTRAN 90</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
+ 
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #060606, #4f504f);">
+         SEE MORE</button>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+
+
+
+  <footer class="bg-dark text-light pt-2" style="background-color: rgb(93, 17, 17) !important;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="text-center">
+
+            <h5><br>Contact Me</h5>
+            <p>Email: abhinabapahari@gmail.com<br>
+              abhinabapahari@outlook.com</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style="display: flex;justify-content: center;margin:0px 5px;">
+            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 45px;height: 40px;margin-top:30px;padding: 7px;"></a>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="text-center">
+            <div class="copyright">
+              <strong><span><br>abhinaba2002.github.io</span></strong>
+            </div>
+            <div class="credits">
+              © Copyright 2024 <a> <strong>Abhinaba Pahari</strong></a> <br>All Rights Reserved<br><br><br>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+  </footer>
 
 </body>
 </html>
