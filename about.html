@@ -1,74 +1,146 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prism.css">
-    <link rel="stylesheet" href="super1.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    <title>Abhinaba's Personal Site</title>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinaba's Personal Site</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
+
+
 <body>
-    
-    <script src="prism.js"></script>
-    <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-    <!-- Header starts -->
-    <header class="header">
-        <div id="up-1">
-            <a href="index.html"><p>Abhinaba Pahari</p></a>
-        </div>
-        <div id="up-2">
-            <ul style="padding: 0rem;">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="joinpage.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div id="up-3">
-            <a  href="joinpage.html"><button>Sign Up</button></a>
-        </div>
-    </header>
-    <!-- header ends -->
-    
-
-    <div style="padding-top:70px;"></div>
-
-    <div class="content_area">
-    
-        <!-- main work area -->
-         <div style="box-shadow: 0.1px 0.1px 1px;width:60%;margin-bottom: 4rem;">
-         <img style="width:100%;" src="Profile.svg" alt="">
-        </div>
+  <nav id="navbar_top"  class="navbar navbar-expand-md bg-dark navbar-dark shadow">
+    <div class="container">
+      <a href="index.html" class="navbar-brand align-self-center">
         
-        </div>
+        Abhinaba Pahari
+      </a>
 
-        
-        <footer style="height: 14rem;background-color: rgb(106, 50, 30);">
-            <div style="display: flex;justify-content: center;">
-            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 30px;height: 26px;margin-top:30px;padding: 7px;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto" style="color: brown;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" >
+              Home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropbtn" href="projects.html">Projects</a>
+
+            <div class="dropdown-content">
+              <a href="#">Python Projects</a>
+              <a href="#">FORTRAN Codes</a>
+              <a href="#">Qiskit Codes</a>
             </div>
-        <div style="text-align: center;">
-            <p style="font-size: larger; color: rgb(255, 255, 255);">© 2024 Abhinaba Pahari  |  All Rights Reserved</p>
-            <p style="font-size: large; color: rgb(230, 230, 172);">abhinaba2002.github.io<br><br> abhinabapahari@gmail.com <br><br></p>
-        </div>
-        
-        </footer>
-        
 
+          </li>
+          <li class="nav-item">
+            <a href="programs.html" class="nav-link">Progrmas</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="join.html" class="nav-link">Join</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="p-5 bg-intro" id="intro">
+    <div class="container">
+      <div class="h1 text-light text-center">
+        <br>Abhinaba Pahari
+      </div>
+      <p class="text-center text-light">
+        Student of Physics, Indian Institute of Technology Kharagpur.
+      </p>
+      
+      <p><br></p>
+    </div>
+  </section>
+
+    <section class="p-5 text-center text-sm-start bg-present" id="groupHead">
+        <div class="h1 text-center text-dark p-3">About Me</div>
+        <div class="container">
+            <div class="row justify-content-center align-self-center">
+                <div class="col-lg-4 col-sm">
+                    <img src="assets/my_image.JPG" class=" p-2 img-fluid rounded-circle full-width" alt="..." style="box-shadow:0.1px 0.1px 1px;">
+                </div>
+                <div class="col-lg-4 col-sm align-self-center">
+                    <div class="text-center">
+                      
+                        <p style="color:rgb(75, 75, 75)"><strong>I am currently pursuing my masters in Physics. My area of interset is Quantum Computing
+                          and Quantum Information (Mainly continuous variable quantum information). My ongoing masters thesis project is on
+                        simulation of Bosonic systems. I am eager to explore every topics related to Physics and Mathematics. I like to read books, play cricket, singing and playing guitar.
+                      </strong></p> </div>
+                         
+                    </div>  
+                            
+            </div>
+            
+        </div>
+          
+        </div>
+    </section>
+
+   <!-- <div><a href="join.html" style="margin: auto;display: block;"><button class="button-42">MY FULL CV</button></a>
+   </div>  -->
+
+    <footer class="bg-dark text-light pt-2" style="background-color: rgb(93, 17, 17) !important;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="text-center">
+  
+              <h5><br>Contact Me</h5>
+              <p>Email: abhinabapahari@gmail.com<br>
+                abhinabapahari@outlook.com</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div style="display: flex;justify-content: center;margin:0px 5px;">
+              <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 45px;height: 40px;margin-top:30px;padding: 7px;"></a>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="copyright">
+                <strong><span><br>abhinaba2002.github.io</span></strong>
+              </div>
+              <div class="credits">
+                © Copyright 2024 <a> <strong>Abhinaba Pahari</strong></a> <br>All Rights Reserved<br><br><br>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+  
+    </footer>
 
 </body>
-</html>
+
+</script>
