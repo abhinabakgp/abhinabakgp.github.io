@@ -1,171 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prism.css">
-    <link rel="stylesheet" href="super1.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
-    <title>Abhinaba's Personal Site</title>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinaba's Personal Site</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 
+
+
 <body>
-    <script src="prism.js"></script>
-    <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  <nav id="navbar_top"  class="navbar navbar-expand-md bg-dark navbar-dark shadow">
+    <div class="container">
+      <a href="index.html" class="navbar-brand align-self-center">
+        
+        Abhinaba Pahari
+      </a>
 
-    <!-- Header starts -->
-    <header class="header">
-        <div id="up-1">
-            <a href="index.html"><p>Abhinaba Pahari</p></a>
-        </div>
-        <div id="up-2">
-            <ul style="padding: 0rem;">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="joinpage.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div id="up-3">
-          <a href="joinpage.html"><button>Sign Up</button></a> 
-        </div>
-    </header>
-    <!-- header ends -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto" style="color: brown;">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html" >
+              Home
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropbtn" href="projects.html">Projects</a>
+
+            <div class="dropdown-content">
+              <a href="#">Python Projects</a>
+              <a href="#">FORTRAN Codes</a>
+              <a href="#">Qiskit Codes</a>
+            </div>
+
+          </li>
+          <li class="nav-item">
+            <a href="programs.html" class="nav-link">Progrmas</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="join.html" class="nav-link">Join</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="p-5 bg-intro" id="intro">
+    <div class="container">
+      <div class="h1 text-light text-center">
+        <br>Hi, I am Abhinaba Pahari
+      </div>
+      <p class="text-center text-light">
+        I am a M.Sc. student at Department of Physics of Indian Institute of Technology, Kharagpur.
+      </p>
+      <p class="h5 text-center text-light">
+        Welcome to my personal website 
+      </p>
+      
+      <p><br></p>
+    </div>
+  </section>
 
 
+
+
+
+  <section class="container-fluid bg-present">
+    <div class="container pt-3">
+      <div class="h1 text-center text-dark p-3">Recent Projects</div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(249, 192, 240);">
+            <h1 style="font-size:x-large;color:rgb(95, 1, 100);">Analysis of Entanglement of two-mode squeezed vaccum using Wigner quasiprobability distribution</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="assets/Figure_2.png" alt="">
+        
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #f553f8, #581052);">
+         SEE MORE</button>
+                    </div></div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(237, 249, 192);">
+            <h1 style="font-size:x-large;color:rgb(4, 152, 43);">Entanglement in continuous variable systems: Recent advances and current perspectives</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #53f85e, #024602);">
+         SEE MORE</button>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(238, 237, 237);">
+            <h1 style="font-size:x-large;color:rgb(14, 49, 154);">Boson Simulation using Contracted Schrodinger's Equation and Boson to Qubit mapping <br><br></h1>
+           <br>
+    <img style="width:100%;margin-bottom:20px;" src="https://content.cld.iop.org/journals/1367-2630/25/10/103005/revision1/njpacf9c3f1_hr.jpg" alt="">
+     <button class="button-42" style="background-image: linear-gradient(-180deg, #05b8f9, #001660);">
+         SEE MORE</button>
+     </div></div>
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(243, 251, 137);">
+            <h1 style="font-size:x-large;color:rgb(54, 46, 4);">Efficient Variational Quantum Simulator
+                Using Active Error Minimization Techniques : Review <br><br>
+                </h1>
+    <img style="width:100%;margin-bottom:20px;" src="https://d3i71xaburhd42.cloudfront.net/df6bdf26b2ad1a609f6a23e76aa7a4c3d6d82fe5/11-Figure5-1.png" alt="">
+     <button class="button-42" style="background-image: linear-gradient(-180deg, #f8c302, #ff9d00);">
+         SEE MORE</button>
+
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(253, 245, 242);">
+            <h1 style="font-size:x-large;color:rgb(233, 102, 1);">Analysis of diffraction of electrons through single slit as Boundary Value Problem</h1>
+             <br>
+            <img style="width:100%;margin-bottom:20px;" src="assets/valo.png" alt="">
+            <button class="button-42" style="background-image: linear-gradient(-180deg, #fe804a, #fd0c0c);">
+            SEE MORE</button>
+                </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
+          <div class="project-container" style="background-color: rgb(250, 250, 250);">
+            <h1 style="font-size:x-large;color:rgb(5, 10, 6);">Study of nuclear reactions using Nuclear emulsion and Data Analysis using FORTRAN 90</h1>
+           <br>
+        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
+ 
+        <button class="button-42" style="background-image: linear-gradient(-180deg, #060606, #4f504f);">
+         SEE MORE</button>
+         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-2 bg-intro-topics">
+    <div class="h1 text-center text-dark p-3">Wigner Representation of Quantum States</div>
+    <div class="container pt-4" style="max-width: 700px;box-shadow:0.1px 0.1px 1px;padding:0px;padding-top: 0px !important;margin-bottom: 20px;">
+      <div id="recenthl" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-bs-target="#recenthl" data-bs-slide-to="0" class="active"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="1"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="2"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="3"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="4"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="5"></li>
+          <li data-bs-target="#recenthl" data-bs-slide-to="6"></li>
+        </ol>
+        <div class="carousel-inner" >
+          <div class="carousel-item active" style="border-width:20px !important;">
+            <img src="slide_images/coh1.png" class="d-block img-fluid w-100" alt="First Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/coh2.png" class="d-block img-fluid w-100" alt="Second Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/squez3.png" class="d-block img-fluid w-100" alt="Third Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/squez4.png" class="d-block w-100" alt="Fourth Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/squez1.png" class="d-block w-100" alt="Fifth Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/Figure_3.png" class="d-block w-100" alt="Sixth Slide" />
+          </div>
+          <div class="carousel-item">
+            <img src="slide_images/Figure_1.png" class="d-block w-100" alt="Seventh Slide" />
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#recenthl" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recenthl" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </a>
+      </div>
+    </div>
+    <Button class="button-42" style="margin: auto;display: block;">Know More</Button>
     
+  </section>
+  <br><br>
+  <hr style="margin:0;">
 
-    <!-- <div style="padding-top:30px;"></div> -->
+  <section class="p-2 bg-intro-topics">
+    <div class="container pt-4">
+      <div id="recenthl" class="carousel slide" data-bs-ride="carousel">
+      <!-- contact card....................... -->
+      <div style="background-color: rgb(247, 248, 248);padding: 3rem;margin:auto;box-shadow: 0.01px 0.01px 1px;max-width: 800px;">
+        <h1>Contact Me <br> </h1>
+     <p style="font-family: Lato,sans-serif;">Name</p>
+     <input class = "form_entry" type="text" required>
+     <p style="font-family: Lato,sans-serif;">Email</p>
+     <input type="text" class = "form_entry" required>
+     <p style="font-family: Lato,sans-serif;">Message</p>
+     <textarea name="textarea" class = "form_entry" style="resize: none;width:100%;height: 140px;"></textarea>
+     <br><a href="joinpage.html"><button class="button-42">SUBMIT</button></a>
+ </div>
+    </div>
+    </div>
+  </section>
 
-    <div id = "main_section" style="padding:0px 0px; width: 100%;justify-content:center;text-align: center;">
-        <img style="height:2hw;width:100%;display:block;margin:auto;overflow:hidden;" src="https://cdn.wallpapersafari.com/22/30/f2hFqX.jpg" alt="">
-        <!-- transform: translate(-50%, -50%); -->
-        <!-- <h1 style="position: absolute;top: 20%;left:16%;color: rgb(255, 255, 255);font-size:4vw;">Hi, I am Abhinaba Pahari. <br> Welcome to my Personal Website.</h1> -->
-        <div style="background-color: aliceblue;position: absolute;top: 20%;width:100%;background-color: transparent;">
-            <h1 style = "font-size:4vw;color: rgb(255, 255, 255)">Hi, I am <a style="color: #7aff83;">Abhinaba Pahari</a>. <br> Welcome to my Personal Website.</h1>
-            <div style="background-color: rgb(180, 182, 184);width:60%;opacity:0.9;margin: auto;">
-            <p style="color: rgb(0, 0, 0);font-size:1.3vw;font-family:Lato;width:70%;margin:auto;padding:4%;">
-            I am a graduate student in Physics currently pursuing my Masters in Physics in Indian Institute of Technology Kharagpur, India. 
-            In this Website I have kept some of my recent works including projects and assignments. Thanks for checking out.</p>
-            </div>
-            <input class = "form_entry" type="text" placeholder="Search Anything...." style="width: 30%;margin-top:5%;border-radius:25px;padding:0px 20px;"><br>
-            <button class="button-42">Search</button>
+
+  <footer class="bg-dark text-light pt-2" style="background-color: rgb(93, 17, 17) !important;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="text-center">
+
+            <h5><br>Contact Me</h5>
+            <p>Email: abhinabapahari@gmail.com<br>
+              abhinabapahari@outlook.com</p>
+          </div>
         </div>
-        
-        <!-- <img style="padding:6px;display:block;margin:auto;overflow:auto;" src="\IMG_0778.JPG" alt=""> -->
-    </div>
-
-
-
-
-
-
-<!-- whreeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
-
-<div style="width:80%;margin: auto;">
-    <br><br><h2 style="font-size: xx-large;">Projects during my Postgraduate Studies</h2> 
-
-    <div style="display:flex;flex-wrap: wrap;">
-
-    <div style="width:450px;background-color: rgb(238, 237, 237);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 2px rgb(183, 199, 203);">
-           <h1 style="font-size:x-large;color:rgb(14, 49, 154);">Boson Simulation using Contracted Schrodinger's Equation</h1>
-          <br>
-   <img style="width:420px;margin-bottom:20px;" src="https://content.cld.iop.org/journals/1367-2630/25/10/103005/revision1/njpacf9c3f1_hr.jpg" alt="">
-   <center>
-    <button class="button-42" style="background-image: linear-gradient(-180deg, #05b8f9, #001660);">
-        SEE MORE</button>
-   </center>
-    </div>
-
-    <div style="width:450px;background-color: rgb(237, 249, 192);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 2px rgb(183, 198, 202);">
-    <h1 style="font-size:x-large;color:rgb(4, 152, 43);">Entanglement in continuous variable systems</h1>
-   <br>
-<img style="width:420px;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
-<center>
-<button class="button-42" style="background-image: linear-gradient(-180deg, #53f85e, #024602);">
- SEE MORE</button>
-</center>
-    </div>
-
-    <div style="width:450px;background-color: rgb(252, 253, 238);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 2px rgb(181, 192, 195);">
-        <h1 style="font-size:x-large;color:rgb(172, 142, 8);">Efficient Variational Quantum Simulator
-            Using Active Error Minimization
-            </h1>
-<img style="width:420px;margin-bottom:20px;" src="https://d3i71xaburhd42.cloudfront.net/df6bdf26b2ad1a609f6a23e76aa7a4c3d6d82fe5/11-Figure5-1.png" alt="">
-<center>
- <button class="button-42" style="background-image: linear-gradient(-180deg, #e5fb6d, #566103);">
-     SEE MORE</button>
-</center>
-    </div>
-
-
-    <div style="width:450px;background-color: rgb(253, 245, 242);padding: 2rem;margin: 2rem;box-shadow: 6.0px 6.0px 2px rgb(178, 195, 199);">
-<h1 style="font-size:x-large;color:rgb(233, 102, 1);">Analysis of diffraction of electrons through single slit as Boundary Value Problem</h1>
- <br>
-<img style="width:420px;margin-bottom:20px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1A7LhXny8mDC06Iyyz67soMFGT-jILKFDYRh-bKYuRSO0YD0rZdKs5v9VCZQjJ4o-jg&usqp=CAU" alt="">
-<center>
-<button class="button-42" style="background-image: linear-gradient(-180deg, #f94e05, #fcc997);">
-SEE MORE</button>
-</center>
-    </div>
-
-</div>
-</div>
-
-
-
-<!-- aejtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <div style="display: flex;justify-content: center;">
-
-        <div style="width:800px;background-color: rgb(247, 248, 248);padding: 6rem;margin: 2rem;box-shadow: 0.01px 0.01px 1px;">
-           <h1>Contact Me</h1>
-        <p style="font-family: Lato,sans-serif;">Name</p>
-        <input class = "form_entry" type="text" required>
-        <p style="font-family: Lato,sans-serif;">Email</p>
-        <input type="text" class = "form_entry" required>
-        <p style="font-family: Lato,sans-serif;">Message</p>
-        <textarea name="textarea" class = "form_entry" style="resize: none;width:500px;height: 140px;"></textarea>
-        <br><a href="joinpage.html"><button>SUBMIT</button></a>
-    </div>
-    </div>
-
-<!-- footer starts -->
-
-        <footer style="box-shadow:0.5px 0.5px 1px;height: 14rem;background-color: rgb(106, 50, 30);max-width: 100%;">
-            <div style="display: flex;justify-content: center;">
-            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 30px;height: 30px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 30px;height: 26px;margin-top:30px;padding: 7px;"></a>
+        <div class="col-md-4">
+          <div style="display: flex;justify-content: center;margin:0px 5px;">
+            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 45px;height: 40px;margin-top:30px;padding: 7px;"></a>
             </div>
-        <div style="text-align: center;">
-            <p style="font-size: larger; color: rgb(255, 255, 255);">© 2024 Abhinaba Pahari  |  All Rights Reserved</p>
-            <p style="font-size: large; color: rgb(230, 230, 172);">abhinaba2002.github.io<br><br> abhinabapahari@gmail.com <br><br></p>
         </div>
-        
-        </footer>
-        
+        <div class="col-md-4">
+          <div class="text-center">
+            <div class="copyright">
+              <strong><span><br>abhinaba2002.github.io</span></strong>
+            </div>
+            <div class="credits">
+              © Copyright 2024 <a> <strong>Abhinaba Pahari</strong></a> <br>All Rights Reserved<br><br><br>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+  </footer>
+
 
 
 </body>
+
 </html>
