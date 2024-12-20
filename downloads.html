@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="AP_logo2.ico" type="image/svg+xml">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+  <title>Abhinaba's Personal Site</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+    button {
+        padding: 8px 12px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 20px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+    .modal {
+        text-align: center;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        padding: 20px;
+        animation: fadeIn 0.3s ease;
+    }
+    .modal.active {
+        display: block;
+    }
+    .modal h3 {
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #007bff;
+    }
+    .modal input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top:8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    .modal button {
+        font-size: 16px;
+        padding: 10px;
+        width: 48%;
+        margin: 5px 1%;
+    }
+    .modal button:first-of-type {
+        background-color: #28a745;
+    }
+    .modal button:first-of-type:hover {
+        background-color: #218838;
+    }
+    .modal button:last-of-type {
+        background-color: #dc3545;
+    }
+    .modal button:last-of-type:hover {
+        background-color: #c82333;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+        to {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    h3{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+</style>
+<script>
+
+    let file_to_download = "";
+
+    function openModal(file) {
+        file_to_download = file;
+        document.getElementById('loginModal').classList.add('active');
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('loginModal').classList.remove('active');
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function validateAndDownload() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        let User_pass = new Object();
+
+        const ValiduserNames = ["a1","a2"] ; 
+
+        User_pass["a1"] = "p1";
+        User_pass["a2"] = "p2";
+
+        // if (username === validUsername && password === validPassword) {
+        if (ValiduserNames.includes(username) && password == User_pass[username]) {
+            closeModal();
+            const link = document.createElement('a');
+            link.href = file_to_download; // Path to your file
+            link.download = file_to_download;
+            link.click();
+            // alert("File download started!");
+        } else {
+            alert("Invalid username or password!");
+        }
+    }
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', function () {
+            menuIcon.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+
+</head>
+
+<body>
+    
+    <header>
+        <nav>
+            <div class="logo">Abhinaba Pahari</div>
+
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div style="display: flex;padding:30px 30px;flex-wrap: wrap;">
+
+        <section style="margin: auto;">
+            <h1>Downloads</h1>
+            <p>You will recieve a username and a password after you sign up.
+                <br>Use those as your login credentials to download the project files.</p>
+                <br>
+            <h3>Summer Internship Project Report : September 2024</h3>
+            <button onclick="openModal('/abhinabaProject/Internship.pdf')">Download</button>
+           
+            <h3>Summer Internship Presentation : November 2024</h3>
+            <button onclick="openModal('/abhinabaProject/Summer_ppt.pptx')">Download</button>
+              
+            <h3>Masters Thesis Project Presentation 1 : November 2024</h3>
+            <button onclick="openModal('/abhinabaProject/MTP_PPT.pdf')">Download</button>
+
+            <h3>Quantum Mechanics Term Project Report : November 2023</h3>
+            <button onclick="openModal('/abhinabaProject/Term_Paper.pdf')">Download</button>
+        
+            <h3>Bachelor's Thesis Project Report : December 2022</h3>
+            <button onclick="openModal('/abhinabaProject/BTP.pdf')">Download</button>
+        
+        </section>
+
+    <section id="signup" class="section signup" style="max-width:350px;width: 80%;height: 300px;">
+        <h2>Sign Up</h2>
+        <p>Sign Up to get access to all project files</p>
+        <form action="https://formspree.io/f/mwpkgkdj" method="post">
+            <input type="text" id="name" name="name" placeholder="Full Name" required>
+            <input type="email"  id="email" name="email" placeholder="Email Address" required>
+            <button type="submit">Sign Up</button>   
+        </form>
+    </section>
+    
+    </div>
+
+ 
+    <div id="overlay"></div>
+
+    <div id="loginModal" class="modal">
+        <h2>Verify your credentials to Download</h2>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required>
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required>
+        
+        <button onclick="validateAndDownload()">Download</button>
+        <button onclick="closeModal()">Cancel</button>
+    </div>
+
+    <div id="social"></div>
+
+
+    <footer style="background-color: rgb(1, 54, 139) !important;">
+      <div style="display:flex;justify-content: center;flex-wrap: wrap;">
+            <div>
+  
+              <h5>Contact Me</h5>
+              <p>Email: abhinabapahari@gmail.com<br>
+                abhinabapahari@outlook.com</p>
+            </div>
+          
+          
+            <div style="display: flex;justify-content: center;margin:30px 100px;">
+              <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+              <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 35px;height: 30px;margin-top:30px;padding: 7px;"></a>
+            </div>
+      
+          <div>
+              <div>
+                <strong><span><br>abhinabakgp.github.io</span></strong>
+              </div>
+              <div>
+                © Copyright 2024 <a> <strong>Abhinaba Pahari</strong></a> <br>All Rights Reserved<br><br><br>
+                </div>
+          </div>
+            
+        </div>
+  
+    </footer>
+
+      <script>
+        function scrollToDiv() {
+    const targetDiv = document.getElementById("projects");
+    targetDiv.scrollIntoView({ behavior: "smooth" });
+  }
+      </script>
+
+</body>
+
+</html>
+
