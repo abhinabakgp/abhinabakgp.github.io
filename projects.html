@@ -1,177 +1,739 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhinaba's Personal Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="AP_logo2.ico" type="image/svg+xml">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>Abhinaba's Personal Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href = "styleproject.css">
+    <style>
+        body{
+            background-color: #e8ecfc;
+        }
+        .body-main {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+    
+        .sidebar {
+            width: 20%;
+            background-color: #f5f5f5;
+            border-right: 0.5px solid #bab8b8;
+            overflow-y:auto;
+            display: flex;
+            flex-direction: column;
+            font-size:2vh;
+        }
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+        .sidebar div {
+            padding: 0.6rem;
+            border: 1px solid #c9c9ca;
+            cursor: pointer;
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .sidebar div:hover {
+            background-color: #7bc1f3;
+            transform: scale(1.05);
+        }
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e8ecfc;
+            overflow: hidden;
+            position: relative;
+        }
+    
+        .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            background-color: #e8ecfc;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+        }
+    
+        .details.active {
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transform: scale(1);
+        } 
+
+        p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        @media screen and (max-width: 768px) {
+            .body-main{
+                flex-direction: column;
+            }
+            .sidebar{
+                flex-direction: row;
+                overflow:scroll;
+                width: 100%;
+                /* height: 3rem; */
+            }
+        }
+.button-24 {
+  background: #81a9ee;
+  border: 1px solid #81a9ee;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #1d3cae;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+.pro-intro{
+    padding: 10px 20px;
+    margin: 10px 10px;
+    box-shadow: 1px solid blanchedalmond;
+    background-color: #cbddfd;
+    box-shadow: 1px 1px 2px blueviolet;
+    border-radius: 2rem;
+    color:#010f28;
+    cursor:pointer;
+}
+.pro-intro:hover{
+    box-shadow: 2px 2px 10px blueviolet;}
+    
+
+
+    </style> 
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuIcon = document.querySelector('.menu-icon');
+        const navMenu = document.querySelector('nav ul');
+
+        menuIcon.addEventListener('click', function () {
+            menuIcon.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+
 </head>
 
-
-
 <body>
-  <nav id="navbar_top"  class="navbar navbar-expand-md bg-dark navbar-dark shadow">
-    <div class="container">
-      <a href="index.html" class="navbar-brand align-self-center">
-        
-        Abhinaba Pahari
-      </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<header>
+    <nav>
+        <div class="logo">Abhinaba Pahari</div>
 
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto" style="color: brown;">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" >
-              Home
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropbtn" href="projects.html">Projects</a>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-            <div class="dropdown-content">
-              <a href="#">Python Projects</a>
-              <a href="#">FORTRAN Codes</a>
-              <a href="#">Qiskit Codes</a>
-            </div>
-
-          </li>
-          <li class="nav-item">
-            <a href="programs.html" class="nav-link">Progrmas</a>
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="join.html" class="nav-link">Join</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-          </li>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-    </div>
-  </nav>
+    </nav>
+</header>
 
+<div class="body-main">
 
-  <section class="container-fluid bg-present">
-    <div class="container pt-3">
-      <div class="h1 text-center text-dark p-3">Recent Projects</div>
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(249, 192, 240);">
-            <h1 style="font-size:x-large;color:rgb(95, 1, 100);">Analysis of Entanglement of two-mode squeezed vaccum using Wigner quasiprobability distribution</h1>
-           <br>
-        <img style="width:100%;margin-bottom:20px;" src="assets/Figure_2.png" alt="">
-        
-        <button class="button-42" style="background-image: linear-gradient(-180deg, #f553f8, #581052);">
-         SEE MORE</button>
-                    </div></div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(237, 249, 192);">
-            <h1 style="font-size:x-large;color:rgb(4, 152, 43);">Entanglement in continuous variable systems: Recent advances and current perspectives</h1>
-           <br>
-        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
-        <button class="button-42" style="background-image: linear-gradient(-180deg, #53f85e, #024602);">
-         SEE MORE</button>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(238, 237, 237);">
-            <h1 style="font-size:x-large;color:rgb(14, 49, 154);">Boson Simulation using Contracted Schrodinger's Equation and Boson to Qubit mapping <br><br></h1>
-           <br>
-    <img style="width:100%;margin-bottom:20px;" src="https://content.cld.iop.org/journals/1367-2630/25/10/103005/revision1/njpacf9c3f1_hr.jpg" alt="">
-     <button class="button-42" style="background-image: linear-gradient(-180deg, #05b8f9, #001660);">
-         SEE MORE</button>
-     </div></div>
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(243, 251, 137);">
-            <h1 style="font-size:x-large;color:rgb(54, 46, 4);">Efficient Variational Quantum Simulator
-                Using Active Error Minimization Techniques : Review <br><br>
-                </h1>
-    <img style="width:100%;margin-bottom:20px;" src="https://d3i71xaburhd42.cloudfront.net/df6bdf26b2ad1a609f6a23e76aa7a4c3d6d82fe5/11-Figure5-1.png" alt="">
-     <button class="button-42" style="background-image: linear-gradient(-180deg, #f8c302, #ff9d00);">
-         SEE MORE</button>
-
-        </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(253, 245, 242);">
-            <h1 style="font-size:x-large;color:rgb(233, 102, 1);">Analysis of diffraction of electrons through single slit as Boundary Value Problem</h1>
-             <br>
-            <img style="width:100%;margin-bottom:20px;" src="assets/valo.png" alt="">
-            <button class="button-42" style="background-image: linear-gradient(-180deg, #fe804a, #fd0c0c);">
-            SEE MORE</button>
-                </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 text-center pt-3 px-2">
-          <div class="project-container" style="background-color: rgb(250, 250, 250);">
-            <h1 style="font-size:x-large;color:rgb(5, 10, 6);">Study of nuclear reactions using Nuclear emulsion and Data Analysis using FORTRAN 90</h1>
-           <br>
-        <img style="width:100%;margin-bottom:20px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Wignerfunction_squeezed_0.50.png/1200px-Wignerfunction_squeezed_0.50.png" alt="">
- 
-        <button class="button-42" style="background-image: linear-gradient(-180deg, #060606, #4f504f);">
-         SEE MORE</button>
-         </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<div style = "margin:auto">
-  <iframe width="650" height="303" src="https://www.youtube.com/embed/5AhU12zC8fc?list=RD5AhU12zC8fc" title="Brandon Flowers - Crossfire " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-  </iframe>
+<div class="sidebar">
+    <div onclick="openContent('section0')">Home</div> 
+    <div onclick="openContent('section1')">Masters Thesis Project</div>
+    <div onclick="openContent('section2')">Summer Internship Project 2024</div>
+    <div onclick="openContent('section3')">Bachelor's Project</div>
+    <div onclick="openContent('section4')">Masters Project Part 1</div>
+    <div onclick="openContent('section5')">Term Project IITKGP</div>
+    <div onclick="openContent('section6')">Innovation Lab Project</div>
 </div>
 
+<div class="content" style="display: flex;flex-direction: column;">
+    
 
-  <footer class="bg-dark text-light pt-2" style="background-color: rgb(93, 17, 17) !important;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="text-center">
+    <h1 style="font-weight: 800;font-family:Verdana, Geneva, Tahoma, sans-serif;color:#1d3cae">PROJECTS</h1>
+    <p>Here are some of the projects from my academics. <br>Click on the Titles to Expand.</p>
+    <div class="pro-intro" onclick="openContent('section1')">Masters Thesis Project | Quantum Computing</div>
+    <div class="pro-intro" onclick="openContent('section2')">Summer Internship Project 2024 | Quantum Optics</div>
+    <div class="pro-intro" onclick="openContent('section3')">Bachelor's Project | Nuclear Physics</div>
+    <div class="pro-intro" onclick="openContent('section4')">Masters Project Part 1 | Quantum Computing</div>
+    <div class="pro-intro" onclick="openContent('section5')">Term Project IITKGP | Quantum Mechanics</div>
+    <div class="pro-intro" onclick="openContent('section6')">Innovation Lab Project | Hardware Project</div>
+  
 
-            <h5><br>Contact Me</h5>
+    <div id="section1" class="details" style="width: auto;padding:40px;overflow:auto;">   
+
+        <h2>Simulation of Fermi Hubbard Model Using Scalable Quantum Circuit</h2>
+        <br>
+        <p><strong> Abhinaba Pahari</strong></p>
+        <p><strong>Supervisor:</strong> Prof. Sonjoy Majumder, Department of Physics, IIT Kharagpur</p>
+
+        <h3>Introduction</h3>
+        <p>
+            Simulation of many-body systems is a key area of interest in Condensed Matter and Atomic, Molecular Physics. Quantum computers, operating on the principles of quantum mechanics, are powerful tools for such simulations. The Fermi Hubbard Model is a strongly correlated electron system describing phenomena like phase transitions, magnetic ordering, and superconductivity.
+        </p>
+
+        <h3>Role of Quantum Computers</h3>
+        <p>
+            Classical computers struggle to handle the exponential growth of state space with particle count. For example, a 50-particle system requires around <span class="highlight">10<sup>15</sup></span> coefficients. Quantum computers naturally address this challenge using qubits, which can represent superposed states and inherently encode all possible configurations.
+        </p>
+
+        <h3>Fermi Hubbard Model</h3>
+        <p>
+            The model describes electrons hopping between lattice sites and interacting when occupying the same site. The Hamiltonian consists of:
+        </p>
+        <ul>
+            <li><span class="highlight">Hopping Term</span> (kinetic energy)</li>
+            <li><span class="highlight">Self-Interaction Term</span> (potential energy)</li>
+            <li><span class="highlight">Chemical Potential Term</span> (optional for fixed particle numbers)</li>
+        </ul>
+
+        <h3>Jordan-Wigner Mapping</h3>
+        <p>
+            To simulate quantum systems on quantum computers, the system's state and operators are transformed into qubit space. For a 3-site, 1-dimensional Hubbard model, this requires 6 qubits.
+        </p>
+
+        <h3>Scalable Quantum Circuit</h3>
+        <p>
+            A scalable circuit allows constructing (n+1)-qubit systems by extending n-qubit circuits with additional gates. This approach is implementable on low-connectivity hardware like IBMQX2 using 1-qubit rotation gates and minimally connected CNOT gates.
+        </p>
+
+        <h3>Techniques Used</h3>
+        <ul>
+            <li><span class="highlight">Time Evolution:</span> Trotter-Suzuki decomposition for approximating operator exponentials.</li>
+            <li><span class="highlight">Ground State Finding:</span> Variational Quantum Eigensolver (VQE) and Exact Diagonalization. VQE uses the TwoLocal Ansatz for optimal results.</li>
+        </ul>
+
+        <h3>Applications and Results</h3>
+        <p>
+            Using IBM's Qiskit framework, the Hamiltonian for a 3-site chain was mapped to qubits, and simulations were performed. Results demonstrated that VQE energy values closely matched exact values, validating the scalability and accuracy of the approach.
+        </p>
+        <figure>
+            <img src="abhinabaProject/output.png" alt="Example Quantum Circuit">
+            <figcaption>Example Quantum Circuit for Time Evolution</figcaption>
+        </figure>
+
+        <figure>
+            <img src="abhinabaProject/output22.png" alt="Example Quantum Circuit" width = 600px>
+            <figcaption>Energy | Exact Diagonalization vs VQE</figcaption>
+        </figure>
+
+        <h3>Conclusion and Future Work</h3>
+        <p>
+            The project successfully demonstrated scalable quantum circuits for simulating the Fermi Hubbard Model. Future goals include:
+        </p>
+        <ul>
+            <li>Implementing Imaginary Time Evolution for ground state finding.</li>
+            <li>Extending the model to complex lattices (e.g., triangular, honeycomb).</li>
+            <li>Simulating the Bose Hubbard Model.</li>
+        </ul>
+
+        <h3>Acknowledgments</h3>
+        <p>
+            Special thanks to Prof. Sonjoy Majumder for his guidance and Mr. Sabyasachi Chakraborty for his support.
+        </p>
+
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://www.ibm.com/quantum/qiskit" target="_blank">IBM Qiskit</a></li>
+            <li>Scalable quantum circuits for exponential of Pauli strings and Hamiltonian simulations - R. S. Sarkar et al.</li>
+            <li>Elementary Introduction to Hubbard Model - A. Georges et al.</li>
+        </ul>
+        <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+        <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+    </div>
+
+
+    <div id="section2" class="details" style="width: auto;padding:40px;overflow:auto;">
+        
+        
+            <h2>Wigner Description in Quantum Optics and its Application in Two-Mode Entanglement</h2>
+            <br><br>
+            <p>Abhinaba Pahari</p>
+            <p>Supervisor : Dr. Tamoghna Das, Assistant Professor, IIT Kharagpur</p>
+
+                <h3>Abstract</h3>
+                <p>This work delves into the Wigner function's role in quantum optics, emphasizing its importance in describing continuous variable quantum states. Topics include coherent states, squeezed states, and photon-added states, along with their applications in two-mode entanglement analysis using phase-space representations.</p>
+    
+                <h3>Acknowledgement</h3>
+                <p>I express my gratitude to Dr. Tamoghna Das for his constant guidance and to Mr. Abinash Kar for his support throughout this research.</p>
+    
+                <h3>Introduction</h3>
+                <p>Quantum optics provides a platform to study the fundamental properties of light in terms of its quantum mechanical behavior. States like coherent and squeezed states form the foundation for quantum information protocols. This report explores the Wigner function, a quasi-probability distribution, as a tool for analyzing such quantum states.</p>
+    
+                <h3>Mathematics of Quantum States</h3>
+                <p>The fundamental operators in quantum optics are the creation \(a^\dagger\) and annihilation \(a\) operators, obeying the commutation relation:</p>
+                <p>\[ [a, a^\dagger] = 1 \]</p>
+    
+                <h3>Key Quantum States:</h3>
+                <ul>
+                    <li><strong>Fock State:</strong> \( |n\rangle \) is an eigenstate of the number operator \(n = a^\dagger a\).</li>
+                    <li><strong>Coherent State:</strong> Defined as \( |\alpha\rangle \) with \( a|\alpha\rangle = \alpha|\alpha\rangle \), it minimizes the uncertainty relation.</li>
+                    <li><strong>Squeezed State:</strong> \( |r\rangle \) is obtained by applying the squeezing operator \( S(r) = \exp\left(\frac{r}{2}(a^2 - a^{\dagger 2})\right) \) to the vacuum state.</li>
+                </ul>
+    
+                <h3>Wigner Function:</h3>
+                <p>For a mixed state \(\rho\), the Wigner function is defined as:</p>
+                <p>\[ W(\alpha) = \frac{1}{\pi^2} \int \text{Tr}[\rho D(\xi)] e^{i \alpha^T \Omega \xi} d^2 \xi \]</p>
+    
+                <h3>Figures</h3>
+    
+                <figure>
+                    <img src="Figure_2-4.png" alt="Wigner Function for Coherent State" width="600px">
+                    <figcaption>Figure 1: Wigner Function for a Coherent State.</figcaption>
+                </figure>
+    
+                <figure>
+                    <img src="abhinabaProject/Figure_7.jpeg" alt="Wigner Function for Squeezed State" width="600px">
+                    <figcaption>Figure 2: Wigner Function for a Photon added Squeezed State.</figcaption>
+                </figure>
+    
+                <figure>
+                    <img src="abhinabaProject/Figure_3.jpeg" alt="Two-Mode Squeezed State" width="600px">
+                    <figcaption>Figure 3: Phase-space distribution of a Single mode Squeezed State.</figcaption>
+                </figure>
+    
+                <h3>Conclusion</h3>
+                <p>The Wigner function provides a robust framework for analyzing quantum states in phase space. Its utility spans from foundational descriptions to practical implementations in quantum information science. Two-mode squeezed states, as explored in this study, underscore the potential of Wigner analysis in describing entanglement.</p>
+                
+                <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+
+    </div>
+
+    <div id="section3" class="details" style="width: auto;padding:40px;overflow:auto;">
+        
+
+        <h2>Study on High Energy Interactions Using Nuclear Emulsion Technique</h2>
+                <br><br><br>
+                <p><strong>Abhinaba Pahari</strong> </p>
+                <p><strong>Department of Physics, Jadavpur University</strong></p>
+        
+                <!-- Introduction -->
+                <h3>Introduction</h3>
+                <p>
+                    Evolution of nuclear radiation detection techniques has been crucial in uncovering the mysteries of atomic nuclei. Nuclear emulsion track detectors are sophisticated tools developed to detect charged particles. 
+                </p>
+                <p>
+                    Photographic emulsions played a role in particle physics as early as H. Becquerel's discovery of natural radioactivity. After significant advancements post-WWII, nuclear emulsions have been utilized for international collaborations and major discoveries, such as pions and other elementary particles.
+                </p>
+        
+                <!-- Physical Characteristics -->
+                <h3>Physical Characteristics of Nuclear Photographic Emulsion</h3>
+                <ul>
+                    <li>Composed of silver halide, gelatin, and plasticizer (e.g., glycerine).</li>
+                    <li>Tracks form as ionizing particles interact with emulsion, leaving visible traces after development.</li>
+                    <li>Key properties include grain size, gelatin functionality, and adhesion to glass supports.</li>
+                </ul>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Atomic Number</th>
+                            <th>Atomic Weight</th>
+                            <th>Atoms per cm³ of Halide</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Silver (Ag)</td>
+                            <td>47</td>
+                            <td>107.88</td>
+                            <td>2.071 × 10²²</td>
+                        </tr>
+                        <tr>
+                            <td>Bromine (Br)</td>
+                            <td>35</td>
+                            <td>79.916</td>
+                            <td>2.06 × 10²²</td>
+                        </tr>
+                        <!-- Add other elements here -->
+                    </tbody>
+                </table>
+        
+                <!-- Experimental Data -->
+                <h3>Experimental Data</h3>
+                <p>
+                    The experiment analyzed π− particle interactions at 350 GeV/c using Ilford G5 emulsions. Data was processed to extract multiplicity and pseudorapidity distributions.
+                </p>
+        
+                <!-- Figures -->
+                <h3>Figures</h3>
+                <div>
+                    <figure>
+                        <img src="abhinabaProject/black_track.png" alt="Black Track Multiplicity Distribution">
+                        <figcaption>Black Track Multiplicity Distribution</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="abhinabaProject/grey_track.png" alt="Grey Track Multiplicity Distribution">
+                        <figcaption>GreyTrack Multiplicity Distribution</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/abhinabaProject/shower_track.png" alt="Shower Track Multiplicity Distribution">
+                        <figcaption>Shower Track Multiplicity Distribution</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/abhinabaProject/psr_track.png" alt="Pseudorapidity Distribution" width="600px">
+                        <figcaption>Pseudorapidity Distribution</figcaption>
+                    </figure>
+                </div>
+        
+                <!-- Results -->
+                <h3>Results</h3>
+                <ul>
+                    <li><strong>Black Track Multiplicity:</strong> Gaussian distribution with mean = 8.24, most probable value = 9.</li>
+                    <li><strong>Shower Track Multiplicity:</strong> Mean = 11.24, most probable value = 13.</li>
+                    <li><strong>Pseudorapidity:</strong> Gaussian centered at 0. Mean = 2.69, most probable value ≈ 0.025.</li>
+                </ul>
+                
+                <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+    </div>
+
+
+    <div id="section4" class="details" style="width: auto;padding:40px;overflow:auto;">
+        
+
+
+        <section>
+            <h2>Simulations using Scalable Quantum Circuit Architecture</h2>
+            <br><br>
+            <p><strong>This Project is not owned by me. All the credits of this section 
+                goes to the authors of <a href="https://arxiv.org/pdf/2405.13605" target="_blank">this paper</a>.
+                I added this project because I studied it and it was quite helpful during my masters project. </strong>
+            </p>
+            <br><br>
+            <h3>Introduction</h3>
+            <p>Simulating Hamiltonians is one of the primary goals of quantum computing, leveraging the unique capabilities of quantum systems to explore complex physical phenomena. Hamiltonians, which represent the energy of a system, are often expressed in terms of Pauli strings for quantum circuits. These Pauli strings provide an orthogonal basis for constructing operators in quantum mechanics, enabling the implementation of unitary evolution.</p>
+            <h3>Objective</h3>
+            <p>The objective of this research is to design scalable quantum circuits capable of implementing the exponential of Pauli strings. This enables Hamiltonian simulations on quantum hardware with low connectivity. The circuits are optimized to minimize errors and ensure scalability for large quantum systems, accommodating both time-independent and time-dependent Hamiltonians.</p>
+        </section>
+
+        <section>
+            <h2>Quantum Circuit Design</h2>
+            <h3>Core Design Principles</h3>
+            <ul>
+                <li><strong>Pauli Strings:</strong> Linear combinations of Pauli matrices \(I, X, Y, Z\), which form a basis for representing Hamiltonians.</li>
+                <li><strong>Permutation Similarity:</strong> A novel approach to transform between Pauli strings using permutation matrices represented by CNOT gates.</li>
+                <li><strong>Exponential Representation:</strong> Efficient circuits for \(\exp(i\theta \sigma)\), where \(\sigma\) is a Pauli string, are constructed using Hadamard, rotation, and CNOT gates.</li>
+            </ul>
+            <h3>Implementation</h3>
+            <p>The circuits are designed to handle n-qubit systems, utilizing scalable gate configurations. The design focuses on reusing elements from smaller systems to build larger circuits, ensuring compatibility with quantum hardware constraints.</p>
+
+            <figure>
+                <img src="/abhinabaProject/circuit.png" alt="Example Quantum Circuit" width="700px">
+                <figcaption>Figure 1: Circuit diagram for \(\exp(i\theta \sigma)\).</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Applications</h2>
+            <h3>Hamiltonian Simulation</h3>
+            <p>The proposed circuits are applied to simulate various Hamiltonians, including:</p>
+            <ul>
+                <li><strong>Ising Hamiltonian:</strong> Models interactions between spins in a magnetic field, expressed as \(H = \sum J Z_i Z_{i+1} + h X_i\).</li>
+                <li><strong>Heisenberg Hamiltonian:</strong> Captures spin-spin interactions with terms \(H = \sum J (X_i X_{i+1} + Y_i Y_{i+1} + Z_i Z_{i+1})\).</li>
+                <li><strong>Random Field Hamiltonians:</strong> Incorporates randomness in coefficients, simulating disordered systems.</li>
+            </ul>
+            <p>The Suzuki-Trotter approximation is employed to implement time evolution, dividing complex operations into simpler steps with controllable errors.</p>
+
+            <figure>
+                <img src="/abhinabaProject/simulation_results.png" alt="Simulation Results" width="700px">
+                <figcaption>Figure 2: Error analysis for Hamiltonian simulations using the Suzuki-Trotter formula.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Noise Analysis</h2>
+            <h3>Impact of Noise</h3>
+            <p>The performance of quantum circuits is evaluated under various noise models, including:</p>
+            <ul>
+                <li><strong>Gate Errors:</strong> Errors arising from imperfect implementation of quantum gates, such as bit-flip and phase-flip errors.</li>
+                <li><strong>Idle Errors:</strong> Errors due to qubit decoherence during idle periods, modeled by amplitude damping and phase damping.</li>
+            </ul>
+            <h3>Findings</h3>
+            <p>Fidelity, defined as the overlap between ideal and noisy outputs, is used to measure circuit robustness. Simulations show that fidelity remains above 0.8 for noise strengths \(p < 10^{-3}\).</p>
+
+            <figure>
+                <img src="/abhinabaProject/fidelity_noise_analysis.png" alt="Fidelity Under Noise" width="700px">
+                <figcaption>Figure 3: Fidelity vs. error strength for quantum circuits under noisy conditions.</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <h2>Conclusion</h2>
+            <h3>Key Contributions</h3>
+            <p>This study presents scalable and efficient quantum circuits for implementing the exponential of Pauli strings. The circuits are suitable for low-connectivity quantum hardware and robust against noise.</p>
+            <h3>Future Work</h3>
+            <p>Future research will focus on optimizing circuit depth for complex Hamiltonians, exploring advanced noise mitigation techniques, and implementing higher-order Trotter decompositions for improved accuracy.</p>
+        </section>
+
+        <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+
+
+    </div>
+
+    <div id="section5" class="details" style="width: auto;padding:40px;overflow:auto;">
+
+            <h2>Quantum Description of Electron Diffraction Through Single Slit</h2>
+            <br><br>
+            <p><strong>Authors:</strong> Abhinaba Pahari, Arnab Satpati, Sandipan Hazra</p>
+            <p><strong>Institution:</strong> Indian Institute of Technology Kharagpur, Department of Physics</p>
+            <p><strong>Date:</strong> 30/11/2023</p>
+    
+            <h3>Abstract</h3>
+            <p>
+                This study investigates electron diffraction through a single slit, solving the Time Independent Schrödinger Equation (TISE) in different regions of diffraction. Numerical results and intensity distribution plots validate the theoretical approach. Comparisons with contemporary theories are also discussed.
+            </p>
+    
+            <h3>Introduction</h3>
+            <p>
+                The phenomenon of diffraction, where light spreads into alternating bright and dark regions after passing through a narrow aperture, is well-known. Classical particles do not exhibit this behavior, but electrons demonstrate wave-particle duality, leading to diffraction patterns. This work explores this peculiar property of electrons using quantum mechanics.
+            </p>
+    
+            <h3>Theory</h3>
+            <p>
+                Electron diffraction is governed by the Time Independent Schrödinger Equation:
+            </p>
+            <p>
+                $$-\frac{\hbar^2}{2m} \nabla^2 \psi(x, y, z) + V(x, y, z)\psi = E\psi(x, y, z)$$
+            </p>
+            <p>
+                The slit is placed perpendicular to the \(x\)-axis at \(x = 0\) and extends from \(y = 0\) to \(y = a\). The problem is divided into three regions: incident, slit, and diffraction. The wavefunction at the screen is obtained by solving the TISE and applying boundary conditions.
+            </p>
+    
+            <h3>Wavefunction Inside the Slit</h3>
+            <p>
+                For an incident wavefunction:
+                $$\psi_i(x, y) = A_0 e^{ikx}$$
+            </p>
+            <p>
+                The TISE inside the slit becomes:
+                $$\nabla^2 \psi_s = -\frac{2mE}{\hbar^2} \psi_s$$
+            </p>
+            <p>
+                Using separation of variables, the solution is:
+                $$\psi_s(x, y) = \sum_{n=0}^{\infty} A_n \sin\left(\frac{(2n+1)\pi y}{a}\right) e^{i\sqrt{\frac{2mE}{\hbar^2} - \frac{n^2 \pi^2}{a^2}} x}$$
+            </p>
+    
+            <h3>Wavefunction on the Screen</h3>
+            <p>
+                In the diffraction region, the potential \(V(x, y) = 0\). The wavefunction is:
+                $$\psi_d(x, y) = \int_{-\infty}^\infty A(k_y) e^{i\left(x\sqrt{\frac{2mE}{\hbar^2} - k_y^2} + k_y y\right)} dk_y$$
+            </p>
+            <p>
+                At \(x = b\), the wavefunction on the screen is:
+                $$\psi_{\text{screen}}(y) = \frac{4aA_0}{\pi} \int_{-\infty}^\infty e^{ib\sqrt{\frac{2mE}{\hbar^2} - r^2} + iry} \sum_{n=0}^\infty \frac{1 + e^{-iar}}{((2n+1)\pi)^2 - a^2r^2} dr$$
+            </p>
+    
+            <h3>Numerical Results</h3>
+            <p>
+                Using Python, the intensity distribution \(I \propto |\psi_{\text{screen}}|^2\) was computed for varying slit widths and electron energies. The results show:
+            </p>
+            <ul>
+                <li>Maxima occur at \(y = a/2\).</li>
+                <li>Central maxima width decreases as slit width increases.</li>
+                <li>Central maxima broadens with lower electron energy.</li>
+            </ul>
+    
+            <h3>Conclusion</h3>
+            <p>
+                The study successfully demonstrates electron diffraction through a single slit, emphasizing wave-particle duality. Non-relativistic treatment yields accurate results for low-energy electrons. Future work may extend to relativistic cases for high-energy scenarios.
+            </p>
+    
+            <h3>References</h3>
+            <ul>
+                <li>Quantum Mechanics: Concepts and Applications by Nouredine Zettili</li>
+                <li>Quantum Theory of Light Diffraction by Yan Wang, Jing-Wu Li</li>
+                <li>Quantum Mechanics by David J. Griffiths</li>
+                <li>Single-Slit Electron Diffraction with Aharonov-Bohm Phase by P. Khatua et al.</li>
+                <li>Fundamentals of Optics by Jenkins and White</li>
+            </ul>
+        
+            <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+    </div>
+    
+    <div id="section6" class="details" style="width: auto;padding:40px;overflow:auto;">
+
+            <h2>IoT-Based Real-Time Air Quality Monitoring System</h2>
+            <br><br>
+            <p><strong>Abhinaba Pahari, Arnab Satpati, Sanjay Dey, Arpon Roy</strong></p>
+            <p><strong>Department of Physics, IIT Kharagpur</strong></p>
+            <h3>Abstract</h3>
+            <p>
+              Air pollution is a critical health and environmental concern, particularly in urban and industrial areas. This project presents an IoT-based air quality monitoring system powered by the ESP8266 microcontroller. Using the MQ135 gas sensor for harmful gases and the DHT11 sensor for temperature and humidity, it provides continuous, accessible, and accurate air quality data.
+            </p>
+          
+            <h3>Introduction</h3>
+            <p>
+              Air pollution significantly impacts public health, necessitating real-time monitoring. Traditional systems are expensive and limited in scope. This project employs IoT technology to design a scalable and low-cost solution suitable for diverse environments.
+            </p>
+          
+            <h3>Motivation</h3>
+            <ul>
+              <li>Rising air pollution levels.</li>
+              <li>Health benefits through real-time alerts.</li>
+              <li>Scalability for wide applications.</li>
+              <li>Educational value in IoT and environmental science.</li>
+            </ul>
+          
+            <h3>Objective</h3>
+            <ul>
+              <li>Accurate measurement of air quality using the MQ135 sensor.</li>
+              <li>Real-time alerts with LEDs and buzzer for unsafe levels.</li>
+              <li>Remote monitoring and visualization via the ThingSpeak app.</li>
+            </ul>
+          
+            <h3>Methodology</h3>
+            <p>
+              The system is based on an ESP8266 Wi-Fi module integrated with MQ135 and DHT11 sensors. Data is collected and transmitted to ThingSpeak for real-time monitoring. LEDs and a buzzer provide instant alerts for unsafe air quality levels.
+            </p>
+            <div>
+              <h3>Figures</h3>
+              <figure>
+                <img src="abhinabaProject/components.png" alt="ESP8266 Module" width="600px">
+                <figcaption>Figure 1: Different Devices used</figcaption>
+              </figure>
+              
+              <figure>
+                <img src="abhinabaProject/circuit_aqi.png" alt="Circuit Diagram" width="600px">
+                <figcaption>Figure 2: Circuit Diagram of the System</figcaption>
+              </figure>
+
+              <figure>
+                <img src="abhinabaProject/AQI1.jpg" alt="Circuit Diagram" width="600px">
+                <figcaption>Figure 3: Real Time SetUp of the System</figcaption>
+              </figure>
+
+
+            </div>
+          
+            <h3>Results</h3>
+            <p>
+              <strong>Figures:</strong> Variations of temperature, humidity, and air quality index over time were documented.
+            </p>
+          
+            <h3>Discussion</h3>
+            <ul>
+              <li>Effective IoT-based monitoring demonstrated scalability and cost-effectiveness.</li>
+              <li>Identified limitations and proposed hardware upgrades for future projects.</li>
+            </ul>
+            
+            <figure>
+                <img src="abhinabaProject/AQI2.jpg" alt="Circuit Diagram" width="400px">
+                <figcaption>Figure 4: The Final Product</figcaption>
+              </figure>
+          
+            <h3>Acknowledgment</h3>
+            <p>
+              Gratitude expressed to mentors, the Physics Department of IIT Kharagpur, and contributors for their guidance and support.
+            </p>
+
+            <button  class = "button-24" style = "margin-top: 50px;margin-bottom: 130px;"><a href = "downloads.html" style="text-decoration: none;">DOWNLOAD ENTIRE PROJECT</a></button>
+   
+        </div>
+</div>
+</div>
+
+</div>
+
+<script>
+    function openContent(sectionId) {
+        const allDetails = document.querySelectorAll('.content .details');
+        allDetails.forEach(detail => {
+            detail.classList.remove('active');
+        });
+
+        const activeSection = document.getElementById(sectionId);
+        activeSection.classList.add('active');
+        activeSection.style.zIndex = 9999 ;           // Added by me
+    }
+</script>
+
+<footer style="background-color: rgb(1, 54, 139) !important;">
+    <div style="display:flex;justify-content: center;flex-wrap:wrap;">
+          <div>
+
+            <h5>Contact Me</h5>
             <p>Email: abhinabapahari@gmail.com<br>
               abhinabapahari@outlook.com</p>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div style="display: flex;justify-content: center;margin:0px 5px;">
-            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 45px;height: 45px;margin-top:28px;padding: 7px;"></a>
-            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 45px;height: 40px;margin-top:30px;padding: 7px;"></a>
+        
+        
+          <div style="display: flex;justify-content: center;margin:30px 100px;">
+            <a href="https://www.facebook.com/abhinaba.pahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/1024px-Facebook_icon_2013.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.linkedin.com/in/abhinabapahari/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.quora.com/profile/Abhinaba-Pahari" target="_blank"><img src="https://static.wikia.nocookie.net/logopedia/images/6/68/Quora_favicon.svg" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://www.instagram.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://github.com/Abhinaba2002" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Facebook Icon" style="width: 35px;height: 35px;margin-top:28px;padding: 7px;"></a>
+            <a href="https://youtube.com/@abhinabapahari" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png" alt="Facebook Icon" style="width: 35px;height: 30px;margin-top:30px;padding: 7px;"></a>
+          </div>
+    
+        <div>
+            <div>
+              <strong><span><br>abhinabakgp.github.io</span></strong>
             </div>
-        </div>
-        <div class="col-md-4">
-          <div class="text-center">
-            <div class="copyright">
-              <strong><span><br>abhinaba2002.github.io</span></strong>
-            </div>
-            <div class="credits">
+            <div>
               © Copyright 2024 <a> <strong>Abhinaba Pahari</strong></a> <br>All Rights Reserved<br><br><br>
               </div>
-          </div>
-          
         </div>
+          
       </div>
 
   </footer>
+
 
 </body>
 </html>
