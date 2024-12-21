@@ -298,6 +298,7 @@ nav ul li a:hover{
 
 .signup form input,
 .signup form button {
+    width: calc(100% - 20px);
     margin-bottom: 1rem;
     padding: 0.8rem;
     border-width:1px;
