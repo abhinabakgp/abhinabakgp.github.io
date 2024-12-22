@@ -16,7 +16,7 @@
         padding: 8px 12px;
         font-size: 16px;
         color: #fff;
-        background-color: #007bff;
+        background-color: #0271e8;
         border: none;
         border-radius: 5px;
         cursor: pointer;
@@ -24,7 +24,7 @@
         margin-bottom: 20px;
     }
     button:hover {
-        background-color: #0056b3;
+        background-color: #014997;
     }
     #overlay {
         display: none;
@@ -50,10 +50,12 @@
         z-index: 1000;
         padding: 20px;
         animation: fadeIn 0.3s ease;
-        max-width:80%;
+        max-width: 80%;
+        
     }
     .modal.active {
         display: block;
+
     }
     .modal h3 {
         margin-bottom: 20px;
@@ -153,6 +155,16 @@
         });
     });
 </script>
+<script>
+function opendownloadModal() {
+    document.getElementById('downloadModal').classList.add('active');
+    document.getElementById('overlay').style.display = 'block';
+}
+function closedownloadModal() {
+        document.getElementById('downloadModal').classList.remove('active');
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
 
 </head>
 
@@ -183,28 +195,39 @@
     <div style="display: flex;padding:30px 30px;flex-wrap: wrap;">
 
         <section style="margin: auto;">
-            <h1>Downloads</h1>
-            <p>You will recieve a username and a password after you sign up.
-                <br>Use those as your login credentials to download the project files.</p>
+            <h1>View & Download</h1>
+            <p>In this section I have kept most of the project files and my assignments/notes etc. <br>
+                You are requested to sign up if you are interested. You will recieve a username <br>and a password within one day after you sign up.
+                <br>Use those as your login credentials to open and view the complete project files. </p>
                 <br>
-            <h3>Summer Internship Project Report : September 2024</h3>
-            <button onclick="openModal('/abhinabaProject/Internship.pdf')">Download</button>
-           
             <h3>Summer Internship Presentation : November 2024</h3>
-            <button onclick="openModal('/abhinabaProject/Summer_ppt.pptx')">Download</button>
-              
+            <button onclick="openModal('https://docs.google.com/presentation/d/1OQOaX_RcuyDfrMVIBveJJi57JeU3gGg3/edit?usp=sharing&ouid=102475620692172782012&rtpof=true&sd=true')">Open PPT</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PPT</button>
+
+            <h3>Summer Internship Project Report : September 2024</h3>
+            <button onclick="openModal('https://drive.google.com/file/d/16viTwMmnthsvththpH0JzEI6jfAQw9tZ/view?usp=drive_link')" target = '_blank'>Open PDF</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PDF</button>
+
             <h3>Masters Thesis Project Presentation 1 : November 2024</h3>
-            <button onclick="openModal('/abhinabaProject/MTP_PPT.pdf')">Download</button>
+            <button onclick="openModal('https://docs.google.com/presentation/d/1cLIviKWbd7jaJbBxRncx73nqYN6IDC76/edit?usp=sharing&ouid=102475620692172782012&rtpof=true&sd=true')">Open PPT</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PPT</button>
 
             <h3>Quantum Mechanics Term Project Report : November 2023</h3>
-            <button onclick="openModal('/abhinabaProject/Term_Paper.pdf')">Download</button>
-        
-            <h3>Bachelor's Thesis Project Report : December 2022</h3>
-            <button onclick="openModal('/abhinabaProject/BTP.pdf')">Download</button>
+            <button onclick="openModal('https://drive.google.com/file/d/1zu2G8eFU3FlzFpTYSEM6mD6erqraD8Eb/view?usp=sharing')">Open PDF</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PDF</button>
 
-            <h3>Classical Mechanics assignment : October 2023</h3>
-            <button onclick="openModal('https://drive.google.com/file/d/1Zj8qOwuMcW8Ken62UDIo5Dak8dqHAybW/view?usp=sharing')">Download</button>
-          
+            <h3>Bachelor's Thesis Project Report : December 2022</h3>
+            <button onclick="openModal('https://drive.google.com/file/d/1qKiy2SoosejnRz-Dk4-W8HHwNjJAsPrM/view?usp=sharing')">Open PDF</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PDF</button>
+
+            <h3>Innovation Lab Project Report : November 2024</h3>
+            <button onclick="openModal('https://drive.google.com/file/d/1yWwPuxSjFShQysfVqsgl5TY2kH8X1ERX/view?usp=sharing')">Open PDF</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PDF</button>
+
+            <h3>Innovation Lab PowerPoint Presentation : November 2024</h3>
+            <button onclick="openModal('https://docs.google.com/presentation/d/1TtqCWenvgcm8nsa-6bqw9FopjcNrTM5j/edit?usp=sharing&ouid=102475620692172782012&rtpof=true&sd=true')">Open PPT</button>
+            <button onclick="opendownloadModal()" style="background-color: #28a745;margin-left:10px;">Download PPT</button>
+
         </section>
 
     <section id="signup" class="section signup" style="max-width:350px;width: 80%;height: 300px;">
@@ -223,21 +246,32 @@
     <div id="overlay"></div>
 
     <div id="loginModal" class="modal">
-        <h2>Verify your credentials to Download</h2>
+        <img src="https://pbs.twimg.com/media/E1fE52TVkAQFYyS.jpg:large" alt="Tu Hai Kon?" width="300px" style="border-radius: 10px;">
+        <h2>Verify your credentials</h2>
         <label for="username">Username</label>
         <input type="text" id="username" placeholder="Enter username" required>
         
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Enter password" required>
         
-        <button onclick="validateAndDownload()">Download</button>
+        <button onclick="validateAndDownload()">Open File</button>
         <button onclick="closeModal()">Cancel</button>
     </div>
 
     <div id="social"></div>
 
+    <div id="downloadModal" class="modal">
+        <h2>Download Projects</h2>
+        <img src="https://i.imgflip.com/343u7i.jpg?a481776" alt="Paisa Laya?" width="300px" style="border-radius: 6px;"">
+        <p><strong>Don't worry! </strong><br>I won't charge money for downloads. <br>
+            Just write me an email to <a href="mailto:abhinabapahari@gmail.com" style="text-decoration: none;">abhinabapahari@gmail.com</a><br>stating why you need the project files. 
+            <br><strong>Thank You.</strong></p>
+        <button onclick="closedownloadModal()">Cancel</button>
+    </div>
 
-    <footer style="background-color: rgb(1, 54, 139) !important;">
+
+
+    <footer>
       <div style="display:flex;justify-content: center;flex-wrap: wrap;">
             <div>
   
