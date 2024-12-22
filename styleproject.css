@@ -9,7 +9,7 @@
 .details h3 {
     color: #34495e;
     margin-top: 20px;
-    border-bottom: 2px solid #3498db;
+    border-bottom: 2px solid #371674;
     padding-bottom: 5px;
     font-size: 20px;
 }
@@ -51,7 +51,7 @@
 .details h4 {
     margin-top: 15px;
     font-size: 18px;
-    color: #2980b9;
+    color: #371674;
 }
 
 @media (max-width: 600px) {
