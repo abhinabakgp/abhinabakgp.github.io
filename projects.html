@@ -13,7 +13,7 @@
     <link rel="stylesheet" href = "styleproject.css">
     <style>
         body{
-            background-color: #e8ecfc;
+            background-color: #f6f6f6;
         }
         .body-main {
             margin: 0;
@@ -24,46 +24,47 @@
     
         .sidebar {
             width: 20%;
-            background-color: #f5f5f5;
-            border-right: 0.5px solid #bab8b8;
+            background-color: #ececec;
+            border-right: 0.01px solid #bab8b8;
             overflow-y:auto;
             display: flex;
             flex-direction: column;
-            font-size:2vh;
+            font-size:1rem;
         }
 
         .sidebar div {
-            padding: 0.6rem;
-            border: 1px solid #c9c9ca;
+            padding: 1rem;
+            border-bottom: 0.1px solid #c0c0c0;
             cursor: pointer;
             text-align: center;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             transition: background-color 0.3s, transform 0.3s;
         }
         
         .sidebar div:hover {
-            background-color: #7bc1f3;
+            background-color:#371674;
             transform: scale(1.05);
+            color:#FFFFFF;
         }
 
         .content {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #e8ecfc;
-            overflow: hidden;
+            /* display: flex; */
+            /* align-items: center; */
+            background-color: #f4f4f4;
+            overflow:hidden;
             position: relative;
+            /* flex-direction: column; */
         }
     
         .details {
             position: absolute;
             top: 0;
             left: 0;
-            width: 0;
+            width: auto;
             height: 0;
-            background-color: #e8ecfc;
-            padding: 20px;
+            background-color: #f9f9f9;
+            padding: 40px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
             opacity: 0;
@@ -72,13 +73,13 @@
         }
     
         .details.active {
-            width: 100%;
+            width: auto;
             height: 100%;
             opacity: 1;
             transform: scale(1);
         } 
 
-        p{
+        .details p,.details ul li{
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         h2{
@@ -93,14 +94,23 @@
                 flex-direction: row;
                 overflow:scroll;
                 width: 100%;
-                /* height: 3rem; */
+                font-size:small;
             }
-             .MathJax {
-                font-size: 11px !important;}
+            .sidebar div{
+                padding: 6px;
+                border:0.1px solid rgb(255, 255, 255);
+            }
+            .MathJax {
+                font-size: 11px !important;
+            }
+            .content{
+                padding:4px;
+            }
+           
         }
 .button-24 {
-  background: #81a9ee;
-  border: 1px solid #81a9ee;
+  background: #d3d3d3;
+  border: 1px solid #d3d3d3;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
   box-sizing: border-box;
@@ -116,9 +126,6 @@
   padding: 12px 14px;
   text-align: center;
   text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
 }
@@ -127,27 +134,32 @@
 .button-24:active {
   background-color: initial;
   background-position: 0 0;
-  color: #1d3cae;
+  color: #190a35;
 }
 
 .button-24:active {
   opacity: .5;
 }
 .pro-intro{
-    padding: 10px 20px;
-    margin: 10px 10px;
-    box-shadow: 1px solid blanchedalmond;
-    background-color: #cbddfd;
-    box-shadow: 1px 1px 2px blueviolet;
-    border-radius: 2rem;
-    color:#010f28;
+    padding:10px 20px;
+    margin: 10px 0px;
+    background-color: #fbfbfb;
+    box-shadow: 0.11px 0.11px 1px rgb(17, 17, 19);
+    border-radius: 2px;
     cursor:pointer;
+
 }
 .pro-intro:hover{
-    box-shadow: 2px 2px 10px blueviolet;}
+    box-shadow: 1px 1px 5px rgb(142, 142, 142);
+    color:rgb(14, 8, 55);}
     
+.project-intro-div{
+    overflow:auto;
+    padding:3vw 10vw;
+    height: 100%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-
+}
     </style> 
 
 <script>
@@ -198,20 +210,25 @@
     <div onclick="openContent('section6')">Innovation Lab Project</div>
 </div>
 
-<div class="content" style="display: flex;flex-direction: column;padding:30px 30px;">
-    
+<div class="content">
 
-    <h1 style="font-weight: 800;font-family:Verdana, Geneva, Tahoma, sans-serif;color:#1d3cae">PROJECTS</h1>
-    <p>Here are some of the projects from my academics. <br>Click on the Titles to Expand.</p>
+    <div class="project-intro-div">
+    <h1 style="font-weight: 800;">PROJECTS</h1>
+    <p>Here are some of the projects from my academics. <br>Click on the following sections to Expand. <br></p>
     <div class="pro-intro" onclick="openContent('section1')">Masters Thesis Project | Quantum Computing</div>
     <div class="pro-intro" onclick="openContent('section2')">Summer Internship Project 2024 | Quantum Optics</div>
-    <div class="pro-intro" onclick="openContent('section3')">Bachelor's Project | Nuclear Physics</div>
+    <div class="pro-intro" onclick="openContent('section3')">   Bachelor's Project | Nuclear Physics </div>
     <div class="pro-intro" onclick="openContent('section4')">Masters Project Part 1 | Quantum Computing</div>
     <div class="pro-intro" onclick="openContent('section5')">Term Project IITKGP | Quantum Mechanics</div>
     <div class="pro-intro" onclick="openContent('section6')">Innovation Lab Project | Hardware Project</div>
-  
 
-    <div id="section1" class="details" style="width: auto;padding:40px;overflow:auto;">   
+</div>
+
+
+
+
+
+    <div id="section1" class="details">   
 
         <h2>Simulation of Fermi Hubbard Model Using Scalable Quantum Circuit</h2>
         <br>
@@ -295,7 +312,7 @@
     </div>
 
 
-    <div id="section2" class="details" style="width: auto;padding:40px;overflow:auto;">
+    <div id="section2" class="details">
         
         
             <h2>Wigner Description in Quantum Optics and its Application in Two-Mode Entanglement</h2>
@@ -330,7 +347,7 @@
                 <h3>Figures</h3>
     
                 <figure>
-                    <img src="abhinabaProject/Figure_2-4.png" alt="Wigner Function for Coherent State" width="600px">
+                    <img src="Figure_2-4.png" alt="Wigner Function for Coherent State" width="600px">
                     <figcaption>Figure 1: Wigner Function for a Coherent State.</figcaption>
                 </figure>
     
@@ -352,7 +369,7 @@
 
     </div>
 
-    <div id="section3" class="details" style="width: auto;padding:40px;overflow:auto;">
+    <div id="section3" class="details">
         
 
         <h2>Study on High Energy Interactions Using Nuclear Emulsion Technique</h2>
@@ -442,7 +459,7 @@
     </div>
 
 
-    <div id="section4" class="details" style="width: auto;padding:40px;overflow:auto;">
+    <div id="section4" class="details">
         
 
 
@@ -476,14 +493,16 @@
                 <figcaption>Figure 1: Circuit diagram for \(\exp(i\theta \sigma)\).</figcaption>
             </figure>
         </section>
-
         <section>
             <h2>Applications</h2>
             <h3>Hamiltonian Simulation</h3>
             <p>The proposed circuits are applied to simulate various Hamiltonians, including:</p>
+            
             <ul>
                 <li><strong>Ising Hamiltonian:</strong> Models interactions between spins in a magnetic field, expressed as \(H = \sum J Z_i Z_{i+1} + h X_i\).</li>
-                <li><strong>Heisenberg Hamiltonian:</strong> Captures spin-spin interactions with terms \(H = \sum J (X_i X_{i+1} + Y_i Y_{i+1} + Z_i Z_{i+1})\).</li>
+                <li><strong>Heisenberg Hamiltonian:</strong> Captures spin-spin interactions with terms.
+                </li>
+                
                 <li><strong>Random Field Hamiltonians:</strong> Incorporates randomness in coefficients, simulating disordered systems.</li>
             </ul>
             <p>The Suzuki-Trotter approximation is employed to implement time evolution, dividing complex operations into simpler steps with controllable errors.</p>
@@ -525,7 +544,7 @@
 
     </div>
 
-    <div id="section5" class="details" style="width: auto;padding:40px;overflow:auto;">
+    <div id="section5" class="details">
 
             <h2>Quantum Description of Electron Diffraction Through Single Slit</h2>
             <br><br>
@@ -548,7 +567,7 @@
                 Electron diffraction is governed by the Time Independent Schrödinger Equation:
             </p>
             <p>
-                $$-\frac{\hbar^2}{2m} \nabla^2 \psi(x, y, z) + V(x, y, z)\psi = E\psi(x, y, z)$$
+                \[-\frac{\hbar^2}{2m} \nabla^2 \psi(x, y, z) + V(x, y, z)\psi = E\psi(x, y, z)\]
             </p>
             <p>
                 The slit is placed perpendicular to the \(x\)-axis at \(x = 0\) and extends from \(y = 0\) to \(y = a\). The problem is divided into three regions: incident, slit, and diffraction. The wavefunction at the screen is obtained by solving the TISE and applying boundary conditions.
@@ -606,7 +625,7 @@
    
     </div>
     
-    <div id="section6" class="details" style="width: auto;padding:40px;overflow:auto;">
+    <div id="section6" class="details">
 
             <h2>IoT-Based Real-Time Air Quality Monitoring System</h2>
             <br><br>
@@ -703,7 +722,7 @@
     }
 </script>
 
-<footer style="background-color: rgb(1, 54, 139) !important;">
+<footer>
     <div style="display:flex;justify-content: center;flex-wrap:wrap;">
           <div>
 
