@@ -1,13 +1,13 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #f7f7f7;
+/*     background: #f7f7f7; */
     /* color:#e8ecfc; */
     overflow-x: hidden;
 }
 
 header {
-    background:#371674;
+    background:green;
     color: #fff;
     padding: 1rem 0;
     position: sticky;
